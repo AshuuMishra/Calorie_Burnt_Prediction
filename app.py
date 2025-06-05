@@ -9,6 +9,10 @@ model = joblib.load("RFR_model.pkl")
 scaler = joblib.load("scaler.pkl")
 encoder = joblib.load("label_encoder.pkl")
 
+# Debug info (temporarily)
+st.write("Encoder expects:", encoder.classes_)
+st.write("You selected:", gender)
+
 st.title("🔥 Calories Burnt Prediction App")
 st.markdown("Enter your workout details below:")
 
