@@ -8,13 +8,15 @@ import joblib
 model = joblib.load("RFR_model.pkl")
 scaler = joblib.load("scaler.pkl")
 encoder = joblib.load("label_encoder.pkl")
+st.write("Encoder expects:", encoder.classes_)
+
 
 
 st.title("🔥 Calories Burnt Prediction App")
 st.markdown("Enter your workout details below:")
 
 # Input form
-gender = st.selectbox("Gender",encoder.classes_)
+gender = st.selectbox("Gender",["male", "female"])
 age = st.number_input("Age", 10, 80, 25)
 height = st.number_input("Height (cm)", 100, 250, 170)
 weight = st.number_input("Weight (kg)", 30, 200, 70)
